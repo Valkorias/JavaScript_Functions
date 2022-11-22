@@ -66,7 +66,7 @@ function checkTriangle(a, b, c) {
     let isValid = isValidTriangle(a, b, c);
     if (isValid) {
         if (a == b || b == c) {
-           return `Equilateral`;
+            return `Equilateral`;
         } else if (a == b || b == c || a == c) {
             return `Isosceles`
         } else {
@@ -91,7 +91,7 @@ function dataUsageFeedback(planLimit, day, usage) {
     let remainingDays = periodLength - day;
     let remainingData = planLimit - usage;
     let projectedUsage = remainingDays * currentAvg;
-    let statusMsg; 
+    let statusMsg;
 
     if (currentAvg > projectedAvg) {
         statusMsg = "EXCEEDING";
@@ -100,16 +100,14 @@ function dataUsageFeedback(planLimit, day, usage) {
     } else {
         statusMsg = "AT";
     }
-    
+
     console.log(`${day} days(s) used, ${remainingDays} day(s) remaining
     Average prjected use: ${projectedAvg.toFixed(2)} GB/day.
     You are ${statusMsg} your average daily use (${currentAvg.toFixed(2)} GB/day),
-    continuing this usage, you'll end up using ${
-        planLimit - (usage + projectedUsage)
-    } GB from your data limit.
+    continuing this usage, you'll end up using ${planLimit - (usage + projectedUsage)
+        } GB from your data limit.
     To stay below your data plan, use no more than ${(
-        remainingData / remainingDays
-    ).toFixed(2)} GB/day.`);
+            remainingData / remainingDays
+        ).toFixed(2)} GB/day.`);
 }
 
-dataUsageFeedBack(50, 10, 25);
